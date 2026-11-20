@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Large text mode */
+  html.large-text {
+    font-size: 118%;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: #1E293B;
+    @apply font-sans antialiased transition-colors duration-200;
+  }
+
+  ::selection {
+    background-color: #0C2340;
+    color: #FFFFFF;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* VOGR & Branham.org Banner Style */
+.vogr-hero-bg {
+  background: linear-gradient(180deg, #0C2340 0%, #102B4E 60%, #153864 100%);
+}
+
+.vogr-quote-card {
+  background: linear-gradient(135deg, #FCF8ED 0%, #FAF5E8 100%);
+  border-left: 5px solid #C59B27;
+}
+
+.vogr-crimson-gradient {
+  background: linear-gradient(135deg, #8B1E22 0%, #6E161A 100%);
+}
+
+/* Printable Certificate Styling */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-certificate, #printable-certificate * {
+    visibility: visible;
+  }
+  #printable-certificate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: #FFFFFF !important;
+  }
+}
